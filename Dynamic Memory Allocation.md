@@ -21,8 +21,44 @@ To write a C program that counts the total number of odd elements in an array us
 6. **Free** the dynamically allocated memory using `free()`.
 
 ## Program
-Add code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int *arr;
+    int n, i, odd = 0;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    arr = (int *)malloc(n * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++) {
+        if (arr[i] % 2 != 0) {
+            odd++;
+        }
+    }
+    printf("Total number of odd elements: %d\n", odd);
+    free(arr);
+    return 0;
+}
+```
+
 
 ## Output
+```
+Enter the number of elements: 6
+Enter 6 integers:
+2 7 4 9 10 11
+Total number of odd elements: 3
+```
+
+
 
 ## Result
+The above programme is implemented and executed.
