@@ -19,8 +19,32 @@ To write a C program to determine whether a character is a vowel or a consonant 
    - Print whether the input character is a vowel or consonant.
 
 ## Program
-Add code here
+```
+#include <stdio.h>
+int main() {
+    char ch;
+    char *pch = &ch;  
+    printf("Enter an uppercase alphabet: ");
+    scanf(" %c", pch);  // Notice the space before %c to consume any leftover newline
+    if (*pch == 'A' || *pch == 'E' || *pch == 'I' || *pch == 'O' || *pch == 'U') {
+        printf("The character %c is a vowel.\n", *pch);
+    } else {
+        printf("The character %c is a consonant.\n", *pch);
+    }
+    return 0;
+}
+```
 
 ## Output
+```
+Enter an uppercase alphabet: E
+The character E is a vowel.
+Enter an uppercase alphabet: G
+The character G is a consonant.
+```
+
+
+
 
 ## Result
+The above programme is implemented and executed.
